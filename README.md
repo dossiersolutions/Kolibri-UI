@@ -1,16 +1,17 @@
 # Kolibri UI
 
-** User interface component library **
+**User interface component library**
 
 ---
 
-Kolibri UI contains the presentational UI components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developing.
+Kolibri UI contains the presentational UI components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
 
 Almost all of this is provided through [create-react-app](https://github.com/facebookincubator/create-react-app). This means we don't have to maintain a build configuration, which saves a lot of work for us, will still providing an awesome development environment.
 
+
 ## Usage
 
-Install dependency: `yarn add kolibri-ui` or `npm install kolibri-ui`
+Add as dependency: `yarn add kolibri-ui` or `npm install kolibri-ui`
 
 Import component: `import {SmallSpinner} from "kolibri-ui/components/SmallSpinner";`
 
@@ -18,18 +19,17 @@ Import less for component: `@import "~kolibri-ui/styles/components/SmallSpinner"
 
 Import less for all components: `@import "~kolibri-ui/styles/main";`
 
-Import css directly into webpack (not used by ProFile): `import "kolibri-ui/components/SmallSpinner.css";`
-
 #### Variables supported by less:
 
 TODO
+
 
 ## Developing
 
 ### Getting started
 
 - Clone this repo using git
-- [Install yarn](https://yarnpkg.com) if you don't have it
+- Install [yarn](https://yarnpkg.com) if you don't have it
 - Run `yarn install` inside the kolibri-ui folder
 
 ### Commands

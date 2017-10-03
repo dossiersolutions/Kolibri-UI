@@ -1,2 +1,4 @@
 
-- Continuous integration using travis or similar
+- Publish to npm + yarn scripts?
+- Test importing in Kolibri
+- Continuous integration using Travis or similar
