@@ -50,32 +50,3 @@ Testing is provided by create-react-app, and uses [Jest](https://facebook.github
 ## Documentation
 
 Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions.
-
-
-
-
-#### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
-
-Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
-
-To publish it at [https://myusername.github.io/my-app](https://myusername.github.io/my-app), run:
-
-```sh
-npm install --save gh-pages
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add gh-pages
-```
-
-Add the following scripts in your `package.json`:
-
-```diff
-  "scripts": {
-+   "predeploy": "npm run build",
-+   "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-```
