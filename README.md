@@ -4,6 +4,8 @@
 
 ---
 
+[![Build Status](https://travis-ci.org/dossiersolutions/kolibri-ui.svg?branch=master)](https://travis-ci.org/dossiersolutions/kolibri-ui)
+
 **[Component Documentation](https://dossiersolutions.github.io/kolibri-ui/)**
 
 Kolibri UI contains presentational React components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
