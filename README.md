@@ -4,7 +4,9 @@
 
 ---
 
-Kolibri UI contains the presentational UI components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
+**[Component Documentation](https://dossiersolutions.github.io/kolibri-ui/)**
+
+Kolibri UI contains presentational React components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
 
 Almost all of this is provided through [create-react-app](https://github.com/facebookincubator/create-react-app). This means we don't have to maintain a build configuration, which saves a lot of work for us, will still providing an awesome development environment.
 
@@ -40,6 +42,7 @@ TODO
 - `yarn run test` runs the test suite
 - `yarn run build-app` builds the documentation app
 - `yarn run build-lib` builds the component library
+- `yarn run deploy` deploys the documentation app to Github Pages
 
 Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
 
