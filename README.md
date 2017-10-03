@@ -42,7 +42,7 @@ TODO
 - `yarn run test` runs the test suite
 - `yarn run build-app` builds the documentation app
 - `yarn run build-lib` builds the component library
-- `yarn run deploy` deploys the documentation app to Github Pages
+- `yarn deploy` deploys the documentation app to Github Pages
 
 Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
 

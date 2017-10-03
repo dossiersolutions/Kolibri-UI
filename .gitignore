@@ -23,5 +23,5 @@ yarn-error.log*
 # library
 /components
 
-# generated styles
-/public/styles
+# create-react-app requires everything to be in src or node_modules
+/src/transpiled_cache

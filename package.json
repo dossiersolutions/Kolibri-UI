@@ -5,7 +5,7 @@
   "homepage": "https://dossiersolutions.github.io/kolibri-ui",
   "scripts": {
     "start": "react-scripts start",
-    "watch-css": "less-watch-compiler --source-map styles public/styles --main-file main.less",
+    "watch-css": "less-watch-compiler --source-map styles src/transpiled_cache --main-file main.less",
     "build-app": "react-scripts build",
     "build-lib": "babel src/components --out-dir components --copy-files",
     "test": "react-scripts test --env=jsdom",
