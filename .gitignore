@@ -21,7 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # library
-/dist
+/components
 
 # generated styles
 /public/styles
