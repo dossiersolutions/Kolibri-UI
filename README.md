@@ -10,7 +10,9 @@
 
 Kolibri UI contains presentational React components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
 
-Almost all of this is provided through [create-react-app](https://github.com/facebookincubator/create-react-app). This means we don't have to maintain a build configuration, which saves a lot of work for us, will still providing an awesome development environment.
+The development environment is provided through [create-react-app](https://github.com/facebookincubator/create-react-app). This means we don't have to maintain a build configuration, which saves a lot of work for us, will still providing an awesome development environment.
+
+The actual library distribution is built by Babel, and does not even know about create-react-app.
 
 
 ## Usage
@@ -52,6 +54,8 @@ Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-r
 
 Testing is provided by create-react-app, and uses [Jest](https://facebook.github.io/jest/). See this link for documentation on how to write tests, expectations, mocks and so on.
 
-## Documentation
+### Documentation
 
 Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions.
+
+Keep in mind that the test and development environments provided here are different from the enviroment that in the end imports and uses the components. The library distribution is transpiled by babel alone, without even knowing about create-react-app. This means that if you depend on any rolyfills or build environment features provided by create-react-app, you may have to include these manually in your own build. We are only using create-react-app to provide testing and development features.
