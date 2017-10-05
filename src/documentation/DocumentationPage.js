@@ -3,6 +3,22 @@ import Button from 'widgets/Button';
 import SmallSpinner from "components/SmallSpinner";
 
 
+
+function Documentation({component}) {
+
+  const componentName = component.displayName || component.name;
+
+  return (
+  <div>
+    <h3>{componentName}</h3>
+    {component.description}
+    <h4>Examples:</h4>
+    {component.examples}
+  </div>
+  );
+}
+
+
 function DocumentationPage() {
   return (
     <div className="DocumentationPage">
@@ -12,10 +28,12 @@ function DocumentationPage() {
       <p>
         Some test components:
       </p>
-      <SmallSpinner/>
-      <Button>
-        Hello!
-      </Button>
+      {
+        [
+          Button,
+          SmallSpinner
+        ].map((component) => <Documentation component={component}/>)
+      }
     </div>
   );
 }

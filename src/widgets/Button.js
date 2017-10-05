@@ -41,6 +41,7 @@ function Button(
       disabled={disabled}
       title={title}
       tabIndex="0"
+      onClick={onClick}
       onFocus={onFocus}
       onMouseDown={onMouseDown}
       onKeyDown={onKeyDown}
@@ -49,6 +50,12 @@ function Button(
     </button>
   );
 }
+
+Button.description = `
+  A basic html button supporting several styles.
+`
+
+Button.examples = <Button>Engage</Button>;
 
 Button.propTypes = {
   id: PropTypes.string,
