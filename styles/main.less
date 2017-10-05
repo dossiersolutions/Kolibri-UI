@@ -1,1 +1,281 @@
+
+/*
+  NOTE(jbe): Temporarily copied varaibles from various sources inside ProFile.
+*/
+
+@brand-primary: #7bb1dd;
+/* Brands */
+@brand-primary: #2b345c;
+@brand-primary-shadow: darken(@brand-primary, 20%);
+@brand-primary-active: lighten(@brand-primary, 10%);
+
+@brand-info: #e5e5e5;
+@brand-info-shadow: darken(@brand-info, 10%);
+@brand-info-active: lighten(@brand-info, 2.5%);
+
+@brand-warning: #ffd100;
+@brand-warning-shadow: darken(@brand-warning, 10%);
+@brand-warning-active: lighten(@brand-warning, 10%);
+
+@brand-danger: #d02022;
+@brand-danger-shadow: darken(@brand-danger, 20%);
+@brand-danger-active: lighten(@brand-danger, 10%);
+@brand-primary: #7bb1dd;
+@brand-primary-shadow: darken(@brand-primary, 20%);
+@brand-primary-active: lighten(@brand-primary, 10%);
+
+@brand-success: #5cb85c;
+@brand-success-shadow: darken(@brand-success, 20%);
+@brand-success-active: lighten(@brand-success, 10%);
+
+@brand-info: #5bc0de;
+@brand-info-shadow: darken(@brand-info, 20%);
+@brand-info-active: lighten(@brand-info, 10%);
+
+@brand-warning: #f0ad4e;
+@brand-warning-shadow: darken(@brand-warning, 20%);
+@brand-warning-active: lighten(@brand-warning, 10%);
+
+@brand-danger: #d9534f;
+@brand-danger-shadow: darken(@brand-danger, 20%);
+@brand-danger-active: lighten(@brand-danger, 10%);
+
+@brand-history: #999999;
+@brand-history-shadow: darken(@brand-history, 20%);
+@brand-history-active: lighten(@brand-history, 10%);
+
+@salvia-primary-light-color: #ffffff;
+@salvia-primary-background-color: @salvia-primary-light-color;
+@salvia-secondary-background-color: @salvia-grey10;
+@salvia-link-color: @salvia-primary-dark-color;
+// @salvia-login-banner-background: url(@salvia-custom-company-logo) no-repeat left top;
+// @salvia-login-banner-height: @login-banner-height;
+// @salvia-login-banner-margin: 1em 0 3em 0;
+/* Banner */
+@banner-height: 120px;
+// @banner-image: '@{images-path}/banner.jpg';
+// @banner-logo-image: '@{images-path}/logo-dossier.png';
+@banner-background-color: #ffffff;
+@banner-border-top-color: #e4ebf5;
+@banner-border-bottom-color: #a0a0a0;
+@banner-align: right;
+@banner-logo-align: left;
+
+/* Navigation */
+@nav-section-height: 25px;
+@nav-section-tab-height: 16px;
+@nav-section-color: #757575;
+@nav-section-hover-color: @brand-primary;
+@nav-section-selected-color: @brand-primary; // farge p� tekst valgt
+@nav-section-selected-background-color: none;
+@nav-section-selected-border-color: none;
+@nav-section-border-top-color: @banner-border-top-color;
+@nav-section-border-bottom-color: @banner-border-bottom-color;
+
+@nav-local-color: #000; // farge p� tekst
+@nav-local-background-color: #c6c6c6;
+@nav-local-selected-background-color: @brand-primary; // farge p� bakgrunn valgt menypunkt
+@nav-local-selected-color: #fff; // farge p� font valgt
+@nav-local-padding: 10px;
+@nav-local-initial-padding-left: 24px;
+@nav-local-border-right-color: #b3b3b3;
+@nav-local-border-bottom-width: 0;
+@nav-local-border-bottom-color: transparent;
+
+@nav-context-height: 35px;
+@nav-context-color: #ffffff;
+@nav-context-background-color: #757575; // farge p� bakgrunn
+@nav-context-selected-color: @nav-context-color;
+@nav-context-selected-background-color: #2b345c; // farge p� bakgrunn valgt menypunkt
+@nav-context-border-right-color: darken(@nav-context-background-color, 7.5%);
+@nav-context-border-bottom-width: 1px;
+@nav-context-border-bottom-color: darken(@nav-context-background-color, 15%);
+@nav-context-initial-padding-left: 24px;
+@nav-context-padding-vertical: 10px;
+@nav-context-padding-horizontal: 10px;
+
+@nav-toolbar-height: 35px;
+@nav-toolbar-color: #ffffff;
+
+@nav-toolbar-background-color: #757575; // farge p� bakgrunn
+@nav-toolbar-selected-background-color: #2b345c; // farge p� bakgrunn valgt menypunkt
+
+@nav-toolbar-selected-color: @nav-toolbar-color;
+@nav-toolbar-border-right-color: darken(@nav-toolbar-background-color, 7.5%);
+@nav-toolbar-border-bottom-width: 1px;
+@nav-toolbar-border-bottom-color: darken(@nav-toolbar-background-color, 15%);
+@nav-toolbar-initial-padding-left: 24px;
+@nav-toolbar-padding-vertical: 10px;
+@nav-toolbar-padding-horizontal: 10px;
+
+@nav-tabs-height: 35px;
+@nav-tabs-color: #ffffff;
+@nav-tabs-background-color: @brand-primary;
+@nav-tabs-hover-color: #ffffff;
+@nav-tabs-hover-background-color: @brand-primary-active;
+@nav-tabs-selected-color: @brand-primary;
+@nav-tabs-selected-background-color: #ffffff;
+@nav-tabs-border-color: #deecf5;
+
+/* Context main */
+@context-main-width: 510px;
+@questionnaire-context-main-width: 650px;
+
+/* Context help */
+@context-help-width: 250px;
+@context-help-color: #676767;
+@context-help-background-color: #ededed;
+@context-help-padding: 15px 10px;
+@context-help-border-radius: 8px;
+
+@context-help-arrow-size: 10px;
+@context-help-arrow-top: 24px;
+@context-help-arrow-left: -8px;
+
+@context-help-icon-top: 23px;
+@context-help-icon-left: -28px;
+@context-help-icon-color: #979797;
+@context-help-icon-size: 170%;
+
+/* Pagination */
+@pagination-color: #fff;
+
+@pagination-background-color: @nav-local-background-color;
+@pagination-active-background-color: #28407e; // Farge p� uthevede bak
+
+//@pagination-background-color: @nav-local-background-color;
+@pagination-hover-color: #607080;
+@pagination-hover-background-color: #aaaaaa;
+@pagination-active-color: #ffffff;
+//@pagination-active-background-color: @brand-primary;
+
+/* Offset */
+@offset-background: none;
+
+/* Panels */
+@panel-header-color: #ffffff;
+
+@panel-header-background-color: @brand-primary;
+
+//@panel-header-background-color: @brand-primary;
+@panel-border-color: #8d8d8d;
+
+/* Pop-ups */
+@popup-header-color: #ffffff;
+@popup-header-background-color: @brand-primary;
+
+/* Links */
+@link-color: @brand-primary;
+@link-hover-color: lighten(@brand-primary, 25%);
+
+/* Icons */
+@primary-icon-color: @brand-primary;
+
+/* Buttons */
+@primary-button-color: #ffffff;
+@primary-button-background-color: @brand-primary;
+@primary-button-border-color: @brand-primary;
+@primary-button-border-bottom-color: @brand-primary-shadow;
+@primary-button-hover-color: lighten(@primary-button-color, 10%);
+@primary-button-hover-background-color: @brand-primary-active;
+@primary-button-hover-border-bottom-color: @brand-primary;
+@info-button-color: #676767;
+@info-button-background-color: @brand-info;
+@info-button-border-color: @brand-info;
+@info-button-border-bottom-color: @brand-info-shadow;
+@info-button-hover-color: lighten(@info-button-color, 10%);
+@info-button-hover-background-color: @brand-info-active;
+@info-button-hover-border-bottom-color: @brand-info;
+
+@warning-button-color: #000000;
+@warning-button-background-color: @brand-warning;
+@warning-button-border-color: @brand-warning;
+@warning-button-border-bottom-color: @brand-warning-shadow;
+@warning-button-hover-color: lighten(@warning-button-color, 10%);
+@warning-button-hover-background-color: @brand-warning-active;
+@warning-button-hover-border-bottom-color: @brand-warning;
+
+@danger-button-color: #ffffff;
+@danger-button-background-color: @brand-danger;
+@danger-button-border-color: @brand-danger;
+@danger-button-border-bottom-color: @brand-danger-shadow;
+@danger-button-hover-color: lighten(@danger-button-color, 10%);
+@danger-button-hover-background-color: @brand-danger-active;
+@danger-button-hover-border-bottom-color: @brand-danger;
+
+@history-button-color: #ffffff;
+@history-button-background-color: @brand-history;
+@history-button-border-color: @brand-history;
+@history-button-border-bottom-color: @brand-history-shadow;
+@history-button-hover-color: lighten(@history-button-color, 10%);
+@history-button-hover-background-color: @brand-history-active;
+@history-button-hover-border-bottom-color: @brand-history;
+
+/* Print button */
+@print-button-width: 132px;
+@print-button-height: 28px;
+@print-button-margin: 12px 0 20px 68px;
+@print-button-icon-size: 170%;
+
+@print-button-color: @info-button-color;
+@print-button-background-color: @info-button-background-color;
+@print-button-border-color: @info-button-border-color;
+@print-button-border-bottom-color: @info-button-border-bottom-color;
+@print-button-hover-color: @info-button-hover-color;
+@print-button-hover-background-color: @info-button-hover-background-color;
+@print-button-hover-border-bottom-color: @info-button-hover-border-bottom-color;
+
+
+
+// NOTE(jbe): These are the only four variables that we change between company styles in Salvia.
+// They can be overridden in dossierprofile-distributions/src/main/webapp/.../variables.less
+@salvia-primary-dark-color: @brand-primary;
+
+/* Responsive break points */
+// lte = less than or equal, gte = greater than or equal
+@salvia-lte-mobile: ~"screen and (max-width: 700px)";
+@salvia-lte-tablet: ~"screen and (max-width: 900px)";
+@salvia-gte-tablet: ~"screen and (min-width: 701px)";
+@salvia-gte-desktop: ~"screen and (min-width: 901px)";
+
+// New status colors
+@salvia-not-approved-element-background-color: #e00;
+@salvia-not-approved-element-color: #ffffff;
+@salvia-not-approved-color: #e00;
+
+@salvia-approved-element-background-color: #3eca6b;
+@salvia-approved-element-color: #000000;
+@salvia-approved-color: #3eca6b;
+
+@salvia-problematic-element-background-color: #ffd101;
+@salvia-problematic-element-color: #000000;
+@salvia-problematic-color: #ffd101;
+
+@salvia-no-data-element-background-color: @salvia-grey30;
+@salvia-no-data-element-color: #000000;
+@salvia-no-data-color: @salvia-grey30;
+
+// root grey colors
+@salvia-grey10: #f5f5f5;
+@salvia-grey20: #e5e5e5;
+@salvia-grey30: #ccc;
+@salvia-grey35: #aaa;
+@salvia-grey40: #707070;
+@salvia-grey60: #666;
+@salvia-grey80: #444;
+
+// Font sizes
+@salvia-size11: .786rem;
+@salvia-size12: .857rem;
+@salvia-size13: .929rem;
+@salvia-size14: 1rem;
+@salvia-size16: 1.143rem;
+@salvia-size18: 1.286rem;
+@salvia-size20: 1.429rem;
+@salvia-size22: 1.571rem;
+@salvia-size24: 1.714rem;
+
+
+
 @import "components/SmallSpinner";
+@import "components/Button";

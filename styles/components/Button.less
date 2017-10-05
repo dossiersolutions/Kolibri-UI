@@ -1,0 +1,289 @@
+// Use this layout when Salvia is turned off
+.Button {
+  display: inline-block;
+  margin: 0 9px 0 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 3px;
+  color: @primary-button-color;
+  background: @primary-button-background-color;
+  border: 1px solid @primary-button-background-color;
+  box-shadow: 0 2px 0 @primary-button-border-bottom-color;
+
+  & * {
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  &.regular {
+    padding: 2px 6px;
+  }
+
+  &.heavy {
+    padding: 6px 12px;
+  }
+
+  &.light {
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 2px 6px;
+  }
+
+  &:hover, &:active, &:focus {
+    color: @primary-button-hover-color;
+    background: @primary-button-hover-background-color;
+    box-shadow: 0 2px 0 @primary-button-hover-border-bottom-color;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: .65;
+    text-decoration: none;
+
+    & * {
+      cursor: not-allowed;
+      text-decoration: none;
+    }
+  }
+
+  & > span:not(.ConfirmLinkEgg) {
+    &:nth-child(2) {
+      margin-left: 5px;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &.invert {
+    background-color: @primary-button-color;
+    border-color: @primary-button-background-color;
+    color: @primary-button-background-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: @primary-button-background-color;
+      background: @primary-button-color;
+    }
+  }
+
+  &.info {
+    box-shadow: 0 2px 0 @info-button-border-bottom-color;
+
+    &:hover, &:active, &:focus {
+      box-shadow: 0 2px 0 @info-button-hover-border-bottom-color;
+    }
+
+    &.invert {
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.warning {
+    box-shadow: 0 2px 0 @warning-button-border-bottom-color;
+
+    &:hover, &:active, &:focus {
+      box-shadow: 0 2px 0 @warning-button-hover-border-bottom-color;
+    }
+
+    &.invert {
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.danger {
+    box-shadow: 0 2px 0 @danger-button-border-bottom-color;
+
+    &:hover, &:active, &:focus {
+      box-shadow: 0 2px 0 @danger-button-hover-border-bottom-color;
+    }
+
+    &.invert {
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.plain {
+    color: #333;
+    background-color: @salvia-primary-light-color;
+    box-shadow: 0 1px 0 #ddd;
+    border: 1px solid #dddddd;
+
+    &:hover, &:active, &:focus {
+      color: #333;
+      background-color: #eee;
+      box-shadow: 0 1px 0 #ddd;
+    }
+  }
+}
+
+// Use this layout when salvia is turned on
+.salvia {
+  .Button {
+    border: 2px solid transparent;
+    background-color: @salvia-primary-dark-color;
+    border-bottom-color: rgba(0, 0, 0, .3);
+    color: @salvia-primary-light-color;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    box-shadow: none;
+    line-height: 1.6;
+
+    &.regular {
+      font-size: 12px;
+      padding: 4px 10px;
+    }
+
+    &.heavy {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+
+    &.light {
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: @salvia-primary-dark-color;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    &[disabled] {
+      text-decoration: none !important;
+    }
+
+    &.invert {
+      background-color: @salvia-primary-light-color;
+      border-color: @salvia-primary-dark-color;
+      color: @salvia-primary-dark-color;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: @salvia-primary-light-color;
+        text-decoration: underline;
+      }
+    }
+
+    &.info,
+    &.warning,
+    &.danger {
+      box-shadow: none;
+
+      &:hover, &:active, &:focus {
+        box-shadow: none;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.Button,
+.salvia .Button {
+  &.info {
+    color: @info-button-color;
+    background: @info-button-background-color;
+    border-color: @info-button-border-color;
+
+    &:hover, &:active, &:focus {
+      color: @info-button-hover-color;
+      background: @info-button-hover-background-color;
+    }
+
+    &.invert {
+      background-color: @primary-button-color;
+      border-color: @info-button-color;
+      color: @info-button-color;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @info-button-color;
+        background: @primary-button-color;
+      }
+    }
+  }
+
+  &.warning {
+    color: @warning-button-color;
+    background: @warning-button-background-color;
+    border-color: @warning-button-border-color;
+
+    &:hover, &:active, &:focus {
+      color: @warning-button-hover-color;
+      background: @warning-button-hover-background-color;
+    }
+
+    &.invert {
+      background-color: @primary-button-color;
+      border-color: @warning-button-background-color;
+      color: @warning-button-background-color;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @warning-button-background-color;
+        background: @primary-button-color;
+      }
+    }
+  }
+
+  &.danger {
+    color: @danger-button-color;
+    background: @danger-button-background-color;
+    border-color: @danger-button-border-color;
+
+    &:hover, &:active, &:focus {
+      color: @danger-button-hover-color;
+      background: @danger-button-hover-background-color;
+    }
+
+    &.invert {
+      background-color: @primary-button-color;
+      border-color: @danger-button-background-color;
+      color: @danger-button-background-color;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @danger-button-background-color;
+        background: @primary-button-color;
+      }
+    }
+  }
+}
