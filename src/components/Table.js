@@ -1,16 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from "introspectable-proptypes";
 
-function Table() {
-  const {
-    type,
-    children
-  } = this.props;
-
-  const types = _.split(type, " ");
+function Table({type, children}) {
+  const types = type.split(" ");
   let tableClassName = "Table";
   if (type) {
-    _.forEach(types, (typeName) => {
+    types.forEach((typeName) => {
       tableClassName += (" " + typeName + "-table");
     });
   }
@@ -21,6 +16,10 @@ function Table() {
     </table>
   );
 }
+
+Table.description = `
+  A basic, styled html table with some styling options.
+`;
 
 Table.propTypes = {
   /**

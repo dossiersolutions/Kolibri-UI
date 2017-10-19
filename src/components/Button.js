@@ -1,21 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-type ButtonProps = {
-  id: string,
-  title: string,
-  confirmMessageKey: string,
-  disabled: boolean,
-  autoFocus: boolean,
-  className: string,
-  size: "heavy" | "light" | "regular",
-  status: "info" | "warning" | "danger" | "plain",
-  invert: boolean,
-  onFocus: () => mixed,
-  onClick: () => mixed,
-  onMouseDown: () => mixed,
-  onKeyDown: () => mixed
-}
+import PropTypes from "introspectable-proptypes";
 
 function Button(
   {
@@ -32,7 +16,7 @@ function Button(
     children,
     invert,
     id
-  } : ButtonProps
+  }
 ) {
 
   const classes = ["Button " + size];
@@ -70,6 +54,7 @@ function Button(
 
 Button.propTypes = {
   id: PropTypes.string,
+  children: PropTypes.node,
   title: PropTypes.string,
   confirmMessageKey: PropTypes.string,
   disabled: PropTypes.bool,
