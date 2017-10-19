@@ -81,12 +81,12 @@ Packages must not be published to npm/yarn before they have been reviewed.
 
 #### Some useful Git commands
 
-`git branch ..` create a branch, list branches, delete branches
-`git checkout --track ..` create a branch tracking an existing remote branch
-`git checkout ..` switch to a branch
-`git add ..` add files to the staging area
-`git commit ..` commit the staging area to HEAD (the current branch)
-`git pull` pull remote changes into the current branch
-`git merge master` merge changes from the master branch into the current branch
-`git rebase master ..` re-base the current branch on top of new changes from the master branch. [Explained here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing).
-`git push` push the current branch to the remote tracking branch (Github).
+- `git branch ..` create a branch, list branches, delete branches
+- `git checkout --track ..` create a branch tracking an existing remote branch
+- `git checkout ..` switch to a branch
+- `git add ..` add files to the staging area
+- `git commit ..` commit the staging area to HEAD (the current branch)
+- `git pull` pull remote changes into the current branch
+- `git merge master` merge changes from the master branch into the current branch
+- `git rebase master ..` re-base the current branch on top of new changes from the master branch. [Explained here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing).
+- `git push` push the current branch to the remote tracking branch (Github).
