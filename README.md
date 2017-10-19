@@ -56,14 +56,37 @@ Testing is provided by create-react-app, and uses [Jest](https://facebook.github
 
 ### Documentation
 
-Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions.
+Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions
+.
 
-Keep in mind that the test and development environments provided here are different from the enviroment imports and uses the components in the end. The library distribution is transpiled by Babel alone, without even knowing about create-react-app. This means that if you depend on any Polyfills or build environment features provided by create-react-app, you may have to include these manually in your own build. Currently, the library transpiler only applies a subset of the create-react-app syntax. We are only using create-react-app to provide testing and development features.
+### Important information
+
+Keep in mind that the test and development environments provided here are different from the enviroment that imports and uses the components in the end. The library distribution is transpiled by Babel alone, without even knowing about create-react-app. This means that if you depend on any polyfills or build environment features provided by create-react-app, you will have to include these manually in your own build. Currently, the library transpiler only transpiles a subset of the create-react-app syntax. We are only using create-react-app to provide testing and development features.
 
 ### Editor and IDE integration
 
-Create-react app already integrates nicely with many editors.
+Create-react app already provides lint configuration (and optionally flow), which will integrate with many editors.
 
 #### IntelliJ
 
-If you want to add this repository as a project subfolder within a larger project, [IntelliJ supports multiple VCS roots natively](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207052265-Multiple-git-repositories). Just check out the project in a subfolder, then go to *Settings*, and then *Version Control*, and add the folder to the list.
+If you want to add this repository as a project subfolder within a larger project, [IntelliJ supports multiple VCS roots natively](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207052265-Multiple-git-repositories). Just check out the project in a subfolder, then go to *Settings*, and then *Version Control*, and add the folder to the list. If you do this, you will still have to make sure that commits get meaningful messages, end up in the correct branch, and push them to Github. It is might be easier to use git directly.
+
+### How to submit changes and have them reviewed
+
+If you are new to git, [this is a very quick intro](http://rogerdudler.github.io/git-guide/).
+
+We use pull requests to review changes before pulling them into the master branch. Therefore, all work should happen within *feature branches* that can be reviewed on git. Github has a [quick overview of this process](https://guides.github.com/introduction/flow/). Atlassian also has a [nice guide that goes more in-depth with actual command line examples](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
+
+Packages must not be published to npm/yarn before they have been reviewed.
+
+#### Some useful Git commands
+
+`git branch ..` create a branch, list branches, delete branches
+`git checkout --track ..` create a branch tracking an existing remote branch
+`git checkout ..` switch to a branch
+`git add ..` add files to the staging area
+`git commit ..` commit the staging area to HEAD (the current branch)
+`git pull` pull remote changes into the current branch
+`git merge master` merge changes from the master branch into the current branch
+`git rebase master ..` re-base the current branch on top of new changes from the master branch. [Explained here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing).
+`git push` push the current branch to the remote tracking branch (Github).
