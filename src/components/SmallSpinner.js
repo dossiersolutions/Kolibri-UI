@@ -9,5 +9,3 @@ SmallSpinner.description = `
 `;
 
 SmallSpinner.examples = <SmallSpinner/>;
-
-SmallSpinner.propTypes = {};
