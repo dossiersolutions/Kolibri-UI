@@ -24,28 +24,57 @@ function ComponentTestbedKnob(
       return <input type="checkbox" checked={value} onChange={(event) => onChange(event.target.checked)}/>;
 
     case "oneOf":
+      /* console.log(value);*/
+
+      const radios = introspection.arg.map((v, i) => {
+        const oldValue = value && value[i];
+
+        const handleChange = (event) => {
+          const newValue = (value || []).slice();
+          newValue[i] = !oldValue;
+          onChange(newValue);
+          /* console.log(i, v);*/
+        };
+
+        return (
+          <label key={scopeName + "[" + i + "]"}>
+            <input
+              type="radio"
+              name={scopeName + "-radio"}
+              checked={oldValue}
+              onChange={handleChange}
+            />
+            <code>{JSON.stringify(v)} </code>
+          </label>
+        );
+      });
+
       return (
         <div>
-          {introspection.arg.map((v) =>
-            <label>
-              <input type="radio" name="TODO" checked={false} onChange={(event) => undefined}/>
-              <code>{JSON.stringify(v)} </code>
-            </label>
-          )}
+          {radios}
         </div>
       );
 
     case "oneOfType":
       return introspection.arg.map((item, index) =>
-        <ComponentTestbedKnob
-          introspection={item.introspection || item}
-          value={value[index]}
-          onChange={(value) => {
-            const newVal = value.slice();
-            newVal[index] = value;
-            return newVal;
-          }}
-        />);
+        {
+          const newScope = scopeName + "[" + index + "]";
+
+          return (
+            <ComponentTestbedKnob
+              key={newScope}
+              scopeName={newScope}
+              introspection={item.introspection || item}
+              value={value[index]}
+              onChange={(value) => {
+                  const newVal = value.slice();
+                  newVal[index] = value;
+                  return newVal;
+              }}
+            />
+          );
+        }
+      );
 
     case "func":
       return "(func)"

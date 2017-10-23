@@ -14,40 +14,47 @@ class ComponentTestbed extends Component {
       }
     } = props;
 
-    if (examples && examples.length) {
-      this.state = {
-        knobs: Object.assign({}, defaultProps, examples[0])
-      };
-    }
-    else {
-      this.state = {
-        knobs: Object.assign({}, defaultProps)
-      };
-    }
+    this.state = {
+      knobSettings: Object.assign({}, defaultProps)
+    };
   }
 
   setKnobValue(name, value) {
     const {
-      knobs
+      knobSettings
     } = this.state;
 
     this.setState({
-      knobs: Object.assign({}, knobs, {[name]: value})
+      knobSettings: Object.assign({}, knobSettings, {[name]: value})
     });
   }
 
-  knobFor(propName) {
+  /* genPropSyntax(componentName, props, defaultProps) {
+   *   const result = [];
+   *   Object.keys(props).forEach((name) => {
+   *     if (props[name] !== defaultProps[name]) {
+   *       result.push(name + "={" + JSON.stringify(props[name]) + "}\n");
+   *     }
+   *   });
+   *   return result;
+   * }*/
+
+  render() {
     const {
+      component: Component,
       component: {
-        propTypes
+        displayName,
+        name,
+        propTypes,
+        defaultProps
       }
     } = this.props;
 
     const {
-      knobs
+      knobSettings
     } = this.state;
 
-    return (
+    const knobControls = Object.keys(propTypes).map((propName) =>
       <tr key={propName}>
         <td>
           <label>
@@ -56,62 +63,31 @@ class ComponentTestbed extends Component {
         </td>
         <td>
           <ComponentTestbedKnob
+            scopeName={propName}
             introspection={propTypes && propTypes[propName].introspection}
-            value={knobs[propName] || ""}
+            value={knobSettings[propName]}
             onChange={(value) => this.setKnobValue(propName, value)}
           />
         </td>
       </tr>
     );
-  }
-
-  genPropSyntax(props, defaultProps) {
-    const result = [];
-    Object.keys(props).forEach((name) => {
-      if (props[name] !== defaultProps[name]) {
-        result.push(name + "={" + JSON.stringify(props[name]) + "}\n");
-      }
-    });
-    return result;
-  }
-
-  render() {
-    const {
-      component: Component,
-      component: {
-        displayName,
-        name,
-        examples,
-        defaultProps
-      }
-    } = this.props;
-
-    const {
-      knobs
-    } = this.state;
-
-    const knobControls = defaultProps && Object.keys(defaultProps).map((propName) => this.knobFor(propName));
-    const componentJsx = <Component {...knobs}/>;
-
-    const necessaryProps = this.genPropSyntax(knobs, defaultProps);
 
     return (
       <div>
         <h4>Examples:</h4>
-        {componentJsx}
+        <Component {...knobSettings}/>
         <Table>
           <tbody>
             {knobControls}
           </tbody>
         </Table>
-        <pre>
-          <code>
-           {necessaryProps}
-          </code>
-        </pre>
       </div>
     );
   }
 }
+
+ComponentTestbed.propTypes = {
+  component: PropTypes.func.isRequired
+};
 
 export default ComponentTestbed;
