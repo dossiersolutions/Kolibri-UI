@@ -102,16 +102,22 @@ Button.description = `
 
 Button.examples = [
   {
-    title: "Tooltip text",
-    children: "Engage"
+    name: "With tooltip",
+    values: {
+      children: "Engage",
+      title: "With tooltip"
+    }
   },
 
   {
-    children: "Engage",
-    disabled: true,
-    invert: true,
-    status: "warning",
-    size: "heavy"
+    name: "With various styling",
+    values: {
+      children: "Engage",
+      disabled: true,
+      invert: true,
+      status: "warning",
+      size: "heavy"
+    }
   }
 ];
 

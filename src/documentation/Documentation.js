@@ -2,37 +2,13 @@ import React, {Component} from 'react';
 import Button from 'components/Button';
 import SmallSpinner from "components/SmallSpinner";
 import Table from "components/Table";
-import ComponentTestbed from "documentation/ComponentTestbed";
+import ComponentDocumentation from "documentation/ComponentDocumentation";
 
 const documentedComponents = [
   Button,
   SmallSpinner,
   Table
 ];
-
-/**
-*/
-function ComponentDocumentation(
-  {
-    component,
-    component: {
-      displayName,
-      name,
-      description
-    }
-  }
-) {
-
-  const componentName = displayName || name;
-
-  return (
-    <div>
-      <h3>{componentName}</h3>
-      {description}
-      <ComponentTestbed component={component}/>
-    </div>
-  );
-}
 
 function ComponentPicker({onPick}) {
 

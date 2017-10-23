@@ -1,0 +1,100 @@
+.ColumnLayout {
+  position: relative;
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+
+  /* Desktops, large than 900px */
+  &.col-desktop-6 {
+    width: 100%;
+  }
+  &.col-desktop-5 {
+    width: 83.33%;
+  }
+  &.col-desktop-4 {
+    width: 66.67%;
+  }
+  &.col-desktop-3 {
+    width: 50%;
+  }
+  &.col-desktop-2 {
+    width: 33.33%;
+  }
+  &.col-desktop-1 {
+    width: 16.67%;
+  }
+  &.col-desktop-hidden {
+    display: none;
+  }
+
+  /* Tablets, between 700px and 900px */
+  @media @salvia-lte-tablet {
+    &[class*="col-tablet-"] {
+      display: inline-block;
+    }
+
+    &.col-tablet-6 {
+      width: 100%;
+    }
+
+    &.col-tablet-5 {
+      width: 83.33%;
+    }
+
+    &.col-tablet-4 {
+      width: 66.67%;
+    }
+
+    &.col-tablet-3 {
+      width: 50%;
+    }
+
+    &.col-tablet-2 {
+      width: 33.33%;
+    }
+
+    &.col-tablet-1 {
+      width: 16.67%;
+    }
+
+    &.col-tablet-hidden {
+      display: none;
+    }
+  }
+
+  /* Phones, less than 700px */
+  @media @salvia-lte-mobile {
+    &[class*="col-mobile-"] {
+      display: inline-block;
+    }
+
+    &.col-mobile-6 {
+      width: 100%;
+    }
+
+    &.col-mobile-5 {
+      width: 83.33%;
+    }
+
+    &.col-mobile-4 {
+      width: 66.67%;
+    }
+
+    &.col-mobile-3 {
+      width: 50%;
+    }
+
+    &.col-mobile-2 {
+      width: 33.33%;
+    }
+
+    &.col-mobile-1 {
+      width: 16.67%;
+    }
+
+    &.col-mobile-hidden {
+      display: none;
+    }
+  }
+}
