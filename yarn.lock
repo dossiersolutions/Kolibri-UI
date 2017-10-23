@@ -3533,9 +3533,9 @@ interpret@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
 
-introspectable-proptypes@^15.6.0:
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/introspectable-proptypes/-/introspectable-proptypes-15.6.0.tgz#c49fed78bbeca53e4dd20f81d3d09f296fad1c21"
+introspectable-proptypes@^15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/introspectable-proptypes/-/introspectable-proptypes-15.6.1.tgz#69c3765a60a6911742002746125c6f3d8b41b886"
   dependencies:
     prop-types "^15.6.0"
 
