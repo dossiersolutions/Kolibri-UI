@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "introspectable-proptypes";
 
 function Button(
   {
@@ -16,7 +16,8 @@ function Button(
     children,
     invert,
     id
-  }) {
+  }
+) {
 
   const classes = ["Button " + size];
 
@@ -51,14 +52,9 @@ function Button(
   );
 }
 
-Button.description = `
-  A basic html button supporting several styles.
-`
-
-Button.examples = <Button>Engage</Button>;
-
 Button.propTypes = {
   id: PropTypes.string,
+  children: PropTypes.node,
   title: PropTypes.string,
   confirmMessageKey: PropTypes.string,
   disabled: PropTypes.bool,
@@ -99,5 +95,30 @@ Button.defaultProps = {
   onMouseDown: null,
   onKeyDown: null
 };
+
+Button.description = `
+  A basic html button supporting several styles.
+`
+
+Button.examples = [
+  {
+    name: "With tooltip",
+    values: {
+      children: "Engage",
+      title: "With tooltip"
+    }
+  },
+
+  {
+    name: "With various styling",
+    values: {
+      children: "Engage",
+      disabled: true,
+      invert: true,
+      status: "warning",
+      size: "heavy"
+    }
+  }
+];
 
 export default Button;

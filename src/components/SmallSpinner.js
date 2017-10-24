@@ -7,7 +7,3 @@ export default function SmallSpinner() {
 SmallSpinner.description = `
   A small, option-less configuration spinner.
 `;
-
-SmallSpinner.examples = <SmallSpinner/>;
-
-SmallSpinner.propTypes = {};

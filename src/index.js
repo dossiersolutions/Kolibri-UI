@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './transpiled_cache/main.css';
 
-import DocumentationPage from "documentation/DocumentationPage";
+import Documentation from "documentation/Documentation";
 
 function App() {
   return (
-    <DocumentationPage/>
+    <Documentation/>
   );
 }
 

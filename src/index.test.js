@@ -5,4 +5,5 @@ import ReactDOM from 'react-dom';
 it('does nothing without crashing', () => {
   /* const div = document.createElement('div');
    * ReactDOM.render(<App />, div);*/
+  expect(1).toBe(1);
 });
