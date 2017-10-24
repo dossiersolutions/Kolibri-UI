@@ -9,7 +9,7 @@
     "test": "react-scripts test --env=jsdom",
     "dev-tmux": "cross-env tmux split-window -h 'yarn test' && tmux split-window 'yarn start' && yarn watch-css",
     "build-app": "react-scripts build",
-    "build-lib": "babel src/components --out-dir components --copy-files",
+    "build-lib": "cross-env NODE_ENV=production babel src/components --out-dir components --copy-files",
     "predeploy": "cross-env NODE_ENV=development yarn run webpack --config webpack.config.dev-bundle.js",
     "deploy": "gh-pages -d build",
     "prepublish": "cross-env CI=true yarn run test && yarn build-lib"

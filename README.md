@@ -60,10 +60,6 @@ Testing is provided by create-react-app, and uses [Jest](https://facebook.github
 Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions
 .
 
-### Important information
-
-Keep in mind that the test and development environments provided here are different from the enviroment that imports and uses the components in the end. The library distribution is transpiled by Babel alone, without even knowing about create-react-app. This means that if you depend on any polyfills or build environment features provided by create-react-app, you will have to include these manually in your own build. Currently, the library transpiler only transpiles a subset of the create-react-app syntax. We are only using create-react-app to provide testing and development features.
-
 ### Editor and IDE integration
 
 Create-react app already provides lint configuration (and optionally flow), which will integrate with many editors.
