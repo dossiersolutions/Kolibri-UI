@@ -1864,8 +1864,8 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     sha.js "^2.4.8"
 
 cross-env@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.0.5.tgz#4383d364d9660873dd185b398af3bfef5efffef3"
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.0.tgz#1f12d6b3777d5847dcf9cf39fbee3c6a76dd5058"
   dependencies:
     cross-spawn "^5.1.0"
     is-windows "^1.0.0"
@@ -3533,9 +3533,9 @@ interpret@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
 
-introspectable-proptypes@^15.6.1:
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/introspectable-proptypes/-/introspectable-proptypes-15.6.1.tgz#69c3765a60a6911742002746125c6f3d8b41b886"
+introspectable-proptypes@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/introspectable-proptypes/-/introspectable-proptypes-15.6.2.tgz#db82460124eddc48cb0c2d66b013b6eb1d9c68dd"
   dependencies:
     prop-types "^15.6.0"
 
@@ -4233,7 +4233,7 @@ less-watch-compiler@^1.8.0:
     mocha "^3.1.2"
     shelljs ">= 0.4.0"
 
-less@^2.7.1, less@^2.7.2:
+less@^2.7.1:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/less/-/less-2.7.2.tgz#368d6cc73e1fb03981183280918743c5dcf9b3df"
   optionalDependencies:
@@ -4244,6 +4244,19 @@ less@^2.7.1, less@^2.7.2:
     mkdirp "^0.5.0"
     promise "^7.1.1"
     request "^2.72.0"
+    source-map "^0.5.3"
+
+less@^2.7.2:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/less/-/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
+  optionalDependencies:
+    errno "^0.1.1"
+    graceful-fs "^4.1.2"
+    image-size "~0.5.0"
+    mime "^1.2.11"
+    mkdirp "^0.5.0"
+    promise "^7.1.1"
+    request "2.81.0"
     source-map "^0.5.3"
 
 leven@^2.1.0:
