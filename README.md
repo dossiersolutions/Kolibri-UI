@@ -41,11 +41,12 @@ TODO
 ### Commands
 
 - `yarn run` shows a list of the available commands
-- `yarn run start` runs the hot reloading server
-- `yarn run watch-css` live-rebuilds the less-files
-- `yarn run test` runs the test suite
-- `yarn run build-app` builds the documentation app
-- `yarn run build-lib` builds the component library
+- `yarn dev-tmux` runs start, watch-css and test in three different tmux panes, provided tmux is running
+- `yarn start` runs the hot reloading server
+- `yarn watch-css` live-rebuilds the less-files
+- `yarn test` runs the test suite
+- `yarn build-app` builds the documentation app
+- `yarn build-lib` builds the component library
 - `yarn deploy` deploys the documentation app to Github Pages
 
 Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
