@@ -10,7 +10,7 @@
     "dev": "concurrently --kill-others 'yarn start' 'yarn test' 'yarn watch-css'",
     "build-app": "react-scripts build",
     "build-lib": "babel src/components --out-dir components --copy-files",
-    "predeploy": "yarn run build-app",
+    "predeploy": "cross-env NODE_ENV=development yarn run webpack --config webpack.config.dev-bundle.js",
     "deploy": "gh-pages -d build",
     "prepublish": "cross-env CI=true yarn run test && yarn build-lib"
   },
