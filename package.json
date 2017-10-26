@@ -7,10 +7,10 @@
     "start": "react-scripts start",
     "watch-css": "less-watch-compiler --source-map styles src/transpiled_cache --main-file main.less",
     "test": "react-scripts test --env=jsdom",
-    "dev": "concurrently --kill-others 'yarn start' 'yarn test' 'yarn watch-css'",
+    "dev-tmux": "cross-env tmux split-window -h 'yarn test' && tmux split-window 'yarn start' && yarn watch-css",
     "build-app": "react-scripts build",
-    "build-lib": "babel src/components --out-dir components --copy-files",
-    "predeploy": "yarn run build-app",
+    "build-lib": "cross-env NODE_ENV=production babel src/components --out-dir components --copy-files",
+    "predeploy": "cross-env NODE_ENV=development yarn run webpack --config webpack.config.dev-bundle.js",
     "deploy": "gh-pages -d build",
     "prepublish": "cross-env CI=true yarn run test && yarn build-lib"
   },
@@ -19,7 +19,7 @@
     "styles"
   ],
   "dependencies": {
-    "introspectable-proptypes": "^15.6.1",
+    "introspectable-proptypes": "^15.6.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
@@ -29,7 +29,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "concurrently": "^3.5.0",
     "cross-env": "^5.0.5",
     "gh-pages": "^1.0.0",
     "less": "^2.7.2",

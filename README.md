@@ -6,9 +6,7 @@
 
 [![Build Status](https://travis-ci.org/dossiersolutions/kolibri-ui.svg?branch=master)](https://travis-ci.org/dossiersolutions/kolibri-ui)
 
-<!--
 **[Component Documentation](https://dossiersolutions.github.io/kolibri-ui/)**
--->
 
 Kolibri UI contains presentational React components that we use to make Dossier ProFile. It also contains a documentation app, a test suite, and a hot-reloading server for developers.
 
@@ -43,11 +41,12 @@ TODO
 ### Commands
 
 - `yarn run` shows a list of the available commands
-- `yarn run start` runs the hot reloading server
-- `yarn run watch-css` live-rebuilds the less-files
-- `yarn run test` runs the test suite
-- `yarn run build-app` builds the documentation app
-- `yarn run build-lib` builds the component library
+- `yarn dev-tmux` runs start, watch-css and test in three different tmux panes, provided tmux is running
+- `yarn start` runs the hot reloading server
+- `yarn watch-css` live-rebuilds the less-files
+- `yarn test` runs the test suite
+- `yarn build-app` builds the documentation app
+- `yarn build-lib` builds the component library
 - `yarn deploy` deploys the documentation app to Github Pages
 
 Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
@@ -60,10 +59,6 @@ Testing is provided by create-react-app, and uses [Jest](https://facebook.github
 
 Because this project uses create-react-app to provide its features, [almost everything is documented there](https://github.com/facebookincubator/create-react-app). They also have instructions for how to migrate to newer versions
 .
-
-### Important information
-
-Keep in mind that the test and development environments provided here are different from the enviroment that imports and uses the components in the end. The library distribution is transpiled by Babel alone, without even knowing about create-react-app. This means that if you depend on any polyfills or build environment features provided by create-react-app, you will have to include these manually in your own build. Currently, the library transpiler only transpiles a subset of the create-react-app syntax. We are only using create-react-app to provide testing and development features.
 
 ### Editor and IDE integration
 
