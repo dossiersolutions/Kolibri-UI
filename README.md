@@ -25,6 +25,15 @@ Import less for component: `@import "~kolibri-ui/styles/components/SmallSpinner"
 
 Import less for all components: `@import "~kolibri-ui/styles/main";`
 
+Pre-compiled CSS is currently not part of the bundle.
+
+### Importing development builds
+
+If you want to import a development version of Kolibri UI (from a branch, or something not yet published as a yarn/npm package), you can first do a local checkout of the version of this project you want to use and build it, next you have two options:
+
+1. Import that folder into the package.json of your project instead of the old kolibri-ui, and run install.
+2. Use [yarn link](https://yarnpkg.com/lang/en/docs/cli/link/) or [npm link](https://docs.npmjs.com/cli/link).
+
 #### Variables supported by less:
 
 TODO
