@@ -19,7 +19,7 @@ The actual library distribution is built by Babel, and does not even know about 
 
 Add as dependency: `yarn add kolibri-ui` or `npm install kolibri-ui`
 
-Import component: `import {SmallSpinner} from "kolibri-ui/components/SmallSpinner";`
+Import component: `import SmallSpinner from "kolibri-ui/components/SmallSpinner";`
 
 Import less for component: `@import "~kolibri-ui/styles/components/SmallSpinner";`
 
