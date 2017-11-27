@@ -1,30 +1,46 @@
 import React, {Component} from 'react';
 import PropTypes from "introspectable-proptypes";
 import {renderToStaticMarkup} from 'react-dom/server';
-import ComponentTestbedKnob from "documentation/ComponentTestbedKnob";
 import Table from "components/Table";
 import ColumnLayout from "components/ColumnLayout";
+import ComponentTestbedKnob from "doc/components/ComponentTestbedKnob";
+import DocExamplePicker from "doc/components/DocExamplePicker";
+
 
 class ComponentTestbed extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
 
+  componentWillMount() {
+    this.initialize(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {
+      component
+    } = this.props;
+
+    if (component !== nextProps.component) {
+      this.initialize(nextProps);
+    }
+  }
+
+  initialize(props) {
     const {
       component: {
         examples,
-        defaultProps,
-        displayName,
-        name,
-        description
+        defaultProps
       }
     } = props;
 
-    const initialKnobSettings = examples && examples.length && examples[0].values;
+    const firstExampleValues = examples && examples.length && examples[0].propValues;
 
-    this.state = {
-      knobSettings: Object.assign({}, initialKnobSettings || defaultProps),
+    this.setState({
+      knobSettings: Object.assign({}, firstExampleValues || defaultProps),
       useSalvia: true
-    };
+    });
   }
 
   setKnobValue(name, value) {
@@ -37,13 +53,15 @@ class ComponentTestbed extends Component {
     });
   }
 
-  getPropSyntax(componentName, props, defaultProps) {
+  getPropSyntax(componentName, props, defaultProps={}) {
     let propStr = "";
+
     Object.keys(props).forEach((name) => {
       if (name !== "children" && props[name] !== defaultProps[name]) {
         propStr += "  " + name + "={" + JSON.stringify(props[name]) + "}\n";
       }
     });
+
     return props.children
          ? "<" + componentName + "\n" + propStr + "/>\n  " + renderToStaticMarkup(props.children) +
            "\n</" + componentName + ">"
@@ -78,6 +96,10 @@ class ComponentTestbed extends Component {
         const introspection = propTypes && propTypes[propName].introspection;
         const defaultValue = defaultProps && defaultProps[propName];
 
+        if (!introspection) {
+          return <p>Missing introspection for {componentName}.{propName}. Not using "prop-types" package?</p>
+        }
+
         return (
           <tr key={propName}>
             <td>
@@ -88,7 +110,7 @@ class ComponentTestbed extends Component {
             </td>
             <td>
               <a
-                href="#"
+                href="#setDefault"
                 onClick={(e) => e.preventDefault() || this.setKnobValue(propName, defaultValue)}
               >
                 <code>{JSON.stringify(defaultValue)}</code>
@@ -114,7 +136,7 @@ class ComponentTestbed extends Component {
               <th>Property</th>
               <th>Type</th>
               <th>Default</th>
-              <th>Playground</th>
+              <th>Value</th>
             </tr>
             {knobControls}
           </tbody>
@@ -123,26 +145,27 @@ class ComponentTestbed extends Component {
     }
     else
     {
-      knobsJsx = <p>This component does not have any PropTypes defined.</p>
+      knobsJsx = <p>{componentName} does not seem to have any props.</p>
     }
-
-    const exampleButtonsJsx = examples && examples.map((example, i) => {
-      const name = example.name || "(no name)"
-
-      return (
-        <button
-          key={name + "-" + i}
-          onClick={() => this.setState({knobSettings: example.values})}
-        >
-          {name}
-        </button>
-      );
-    });
 
 
     return (
-      <div>
+      <div className="ComponentTestbed">
         <div style={{ margin: "2em 0em"}}>
+
+          <ColumnLayout desktopSize={3}>
+            <div>
+              <div className={useSalvia ? "salvia" : null}>
+                <ExaminedComponent {...knobSettings}/>
+              </div>
+              <hr style={{margin: "2em 0", border: "1px solid #ddd"}}/>
+              <pre className="component-code">
+                <code>
+                  {this.getPropSyntax(componentName, knobSettings, defaultProps)}
+                </code>
+              </pre>
+            </div>
+          </ColumnLayout>
 
           <ColumnLayout desktopSize={3}>
             <h3>{componentName}</h3>
@@ -154,33 +177,18 @@ class ComponentTestbed extends Component {
                   checked={useSalvia}
                   onChange={() => this.setState({useSalvia: !useSalvia})}
                 />
-                Use Salvia
+                Salvia wrap
               </label>
-              <div>
-                <p>
-                  <strong>Examples:</strong>
-                </p>
-                {exampleButtonsJsx}
-              </div>
             </div>
 
-          </ColumnLayout>
-
-          <ColumnLayout desktopSize={3}>
-            <div style={{padding: "2em", backgroundColor: "#eee"}}>
-              <div className={useSalvia ? "salvia" : null}>
-                <ExaminedComponent {...knobSettings}/>
-              </div>
-              <hr style={{margin: "2em 0", border: "1px solid #ddd"}}/>
-              <pre>
-                <code>
-                  {this.getPropSyntax(componentName, knobSettings, defaultProps)}
-                </code>
-              </pre>
-            </div>
           </ColumnLayout>
         </div>
 
+        <DocExamplePicker
+          examples={examples}
+          componentName={componentName}
+          onPick={(example) => this.setState({knobSettings: example.propValues})}
+        />
 
         {knobsJsx}
 

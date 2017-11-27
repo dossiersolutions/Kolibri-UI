@@ -103,7 +103,7 @@ Button.description = `
 Button.examples = [
   {
     name: "With tooltip",
-    values: {
+    propValues: {
       children: "Engage",
       title: "With tooltip"
     }
@@ -111,7 +111,7 @@ Button.examples = [
 
   {
     name: "With various styling",
-    values: {
+    propValues: {
       children: "Engage",
       disabled: true,
       invert: true,
