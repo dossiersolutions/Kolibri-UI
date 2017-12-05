@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter} from 'react-router-dom';
 import './transpiled_cache/main.css';
 
-import Documentation from "documentation/Documentation";
+import DocApp from "doc/components/DocApp";
 
-function App() {
-  return (
-    <Documentation/>
-  );
-}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((
+    <HashRouter>
+      <DocApp/>
+    </HashRouter>
+) , document.getElementById('root'));

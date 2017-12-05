@@ -53,6 +53,20 @@ function ColumnLayout({
   );
 }
 
+columnSizeValidation.introspection = {
+  kind: "columnSize"
+};
+
+ColumnLayout.examples = [
+  {
+    name: "Basic usage",
+    propValues: {
+      desktopSize: 6,
+      mobileSize: 3
+    }
+  }
+];
+
 // Validate input column sizes
 function columnSizeValidation(props, propName, componentName) {
   componentName = componentName || "ANONYMOUS";

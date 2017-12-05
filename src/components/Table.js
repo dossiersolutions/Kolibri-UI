@@ -30,30 +30,33 @@ Table.defaultProps = {
 };
 
 Table.description = `
-  A basic, styled html table with some styling options.
+  A basic html table with some styling options.
 `;
 
 Table.examples = [
   {
-    children: [
-      <thead>
-        <tr>
-          <th>Header 1</th>
-          <th>Header 2</th>
-          <th>Header 3</th>
-        </tr>
-        <tr>
-          <td>Data 1</td>
-          <td>Data 2</td>
-          <td>Data 3</td>
-        </tr>
-        <tr>
-          <td>Data 4</td>
-          <td>Data 5</td>
-          <td>Data 6</td>
-        </tr>
-      </thead>
-    ]
+    name: "hello",
+    propValues: {
+      children: (
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+          </tr>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+          </tr>
+          <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+          </tr>
+        </thead>
+      )
+    }
   }
 ];
 

@@ -18,15 +18,13 @@ function ComponentTestbedKnob(
 
   switch (introspection.kind) {
     case "node":
-      return <textarea onChange={handleChange}>
-        {value}
-      </textarea>;
+      return <textarea onChange={handleChange} value={value}/>;
 
     case "string":
       return <input type="text" value={value || ""} onChange={handleChange}/>;
 
     case "bool":
-      return <input type="checkbox" checked={value} onChange={(event) => onChange(event.target.checked)}/>;
+      return <input type="checkbox" checked={!!value} onChange={(event) => onChange(!value)}/>;
 
     case "oneOf":
       const radios = introspection.arg.map((v, i) => (
@@ -84,6 +82,18 @@ function ComponentTestbedKnob(
 
     case "func":
       return null;
+
+    case "columnSize":
+      return ComponentTestbedKnob({
+        scopeName,
+        introspection: {
+          kind: "oneOf",
+          arg: [1,2,3,4,5,6]
+        },
+        defaultValue,
+        value,
+        onChange
+      })
 
     default:
       return "Unsupported propType (" + introspection.kind + ")";
