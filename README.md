@@ -12,7 +12,7 @@ Kolibri UI contains presentational React components that we use to make Dossier 
 
 The development environment is provided through [create-react-app](https://github.com/facebookincubator/create-react-app). This means we don't have to maintain a build configuration, which saves a lot of work for us, will still providing an awesome development environment.
 
-The actual library distribution is built by Babel, and does not even know about create-react-app.
+The actual library distribution is built by Babel.
 
 
 ## Usage
@@ -58,7 +58,7 @@ TODO
 - `yarn build-lib` builds the component library
 - `yarn deploy` deploys the documentation app to Github Pages
 
-Whatever you do, DO NOT RUN `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
+Please don't run `yarn run eject` . The whole point of using create-react-app is to not deal with configuration. At least ask me (jbe) first!
 
 ### Testing
 
